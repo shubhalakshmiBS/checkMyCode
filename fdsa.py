@@ -16,3 +16,12 @@ def openaiDoc(changes_in_file):
 
     print("generated openai Document - {}".format(generated_documentation))
     return generated_documentation
+
+
+import re
+
+#function to extract reqId/defectId
+def extract_req_id_defect_id(commit_message):
+    pattern = r'\b(Req \d+|Defect \d+)\b'
+    matches = re.findall(pattern, commit_message)
+    return matches
