@@ -3,7 +3,7 @@ import openai
 #This function call GPT to run given prompt
 def openaiDoc(changes_in_file):
     openai.api_key = "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"
-    prompt = "Please provide a short summary of the functionality introduced by these changes.\n Check and report whether the committed function/changes include comments. If comments are present but not understandable, indicate 'Given comment not understandable; please correct it'. If comments are not present, inform the developer to add comments.\n" + str(changes_in_file)
+    prompt = ""
     response = openai.Completion.create(
         engine="gpt-3.5-turbo-instruct",
         prompt=prompt,
